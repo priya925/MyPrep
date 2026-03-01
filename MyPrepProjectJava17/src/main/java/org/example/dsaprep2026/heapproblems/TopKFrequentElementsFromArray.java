@@ -11,20 +11,18 @@ public class TopKFrequentElementsFromArray {
         findTopKFrequentElements(arr, 3);
     }
 
-    static void findTopKFrequentElements(int[] arr, int k){
-        PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
-                new PriorityQueue<>((a,b) -> a.getValue() - b.getValue());
-        Map<Integer, Integer> freqMap = new HashMap<>();
-        for(int i=0; i<arr.length; i++){
-            freqMap.put(arr[i], freqMap.getOrDefault(arr[i],0)+1);
+    static void findTopKFrequentElements(int[] arr, int k) {
+
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        for(int j : arr){
+            frequencyMap.put(j, frequencyMap.getOrDefault(j, 0)+1);
         }
-
-        for(Map.Entry<Integer, Integer> map:freqMap.entrySet()){
-            minHeap.offer(map);
-            if(minHeap.size()>k){
+        PriorityQueue<Map.Entry<Integer, Integer>> minHeap =
+                new PriorityQueue<>((a,b) -> a.getValue()-b.getValue());
+        for(Map.Entry<Integer, Integer> j : frequencyMap.entrySet()){
+            minHeap.add(j);
+            if(minHeap.size()>k)
                 minHeap.poll();
-            }
-
         }
 
         while(!minHeap.isEmpty()){
