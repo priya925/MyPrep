@@ -4,7 +4,7 @@ package org.example.dsaprep2026.arrayproblems;
 public class FindSmallestMissingPositiveInteger {
 
     public static void main(String[] args){
-        int[] arr = {1,3,2,4,5,6,7,8,9};
+        int[] arr = {1,3,20,4,5,6,7,80,9};
         System.out.println(findSmallestMissingPositiveInteger(arr));
     }
 

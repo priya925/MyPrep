@@ -18,13 +18,13 @@ public class LongestCommonSubsequence {
     public int findLongestCommonSubsequenceLength(char[] a, char[] b, int firstStringLength, int secondStringLength ){
         if(firstStringLength ==0 || secondStringLength == 0)
             return 0;
-        for(int i=0; i<firstStringLength;i++){
-            for(int j=0; j<firstStringLength; j++){
-                if(i==0 || j==0){
-                    t[i][j] = 0;
-                }
-            }
-        }
+//        for(int i=0; i<firstStringLength;i++){
+//            for(int j=0; j<firstStringLength; j++){
+//                if(i==0 || j==0){
+//                    t[i][j] = 0;
+//                }
+//            }
+//        }
 //        if(t[firstStringLength][secondStringLength] != -1)
 //            return t[firstStringLength][secondStringLength];
         for(int i=1; i<=firstStringLength;i++){
